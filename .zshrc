@@ -38,12 +38,12 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git osx python macports pip node vitrualenv svn npm django emoji-clock help itunes)
 
-export PATH=/Users/joe_yuan/anaconda3/bin:/usr/local/lib/python2.7/site-packages:/usr/local/bin:/usr/X11/bin:/Users/joe_yuan/bin:/usr/local/mysql/bin:/Users/joe_yuan/mongodb/bin:/sbin:/usr/local/Cellar:/usr/local/bin:/usr/local/sbin:/bin:/Users/joe_yuan/.rvm/binlocal/bin:/usr/bin:/usr/local/lib:/usr/sbin
+# export PATH
 
-DYLD_LIBRARY_PATH='/usr/local/mysql/lib'
+# DYLD_LIBRARY_PATH='/usr/local/mysql/lib'
 export DYLD_LIBRARY_PATH
 
-export PYTHONPATH='/Users/joe_yuan/pip_install'
+# export PYTHONPATH='/Users/joe_yuan/pip_install'
 
 export BROWSER="firefox"
 export LANG="en_US.utf8"
@@ -281,4 +281,4 @@ function pdiff() {
 export LC_ALL=C
 
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
