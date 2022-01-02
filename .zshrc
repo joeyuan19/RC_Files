@@ -36,7 +36,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx python macports pip node vitrualenv svn npm django emoji-clock help itunes)
+plugins=(git macos python pip node vitrualenv svn npm)
 
 # export PATH
 
@@ -120,24 +120,7 @@ function Quotation() {
 	open -a TextEdit ~/Desktop2/Notes/Quotation.rtf;	
 }
 
-# FOLDER SHORTCUTS
-function APIS() {
-    echo "Changing to API directory...";
-    cd ~/Desktop2/APIS;
-}
-function PROJECTS() {
-    echo "Changing to PROJECT directory...";
-    cd ~/Desktop2/Projects;
-}
-function LAB() {
-    echo "Changing to LAB directory...";
-    cd ~/Desktop2/ShabaniLab;
-}
-function COURSES() {
-    echo "Changing to COURSES directory...";
-    cd ~/Desktop2/School/NYU/Courses;
-}
-function cleanup() {
+function cleanup_vim_undo() {
     echo "Are you sure? [y/n]"
     read -rs -k 1 ans
     if ["${ans}"=="y"]; then
@@ -145,38 +128,10 @@ function cleanup() {
     fi
 }
 
-
-# PROJECT SHORTCUTS
-function peer_view() {
-	echo "Changing directory to project folder...";
-	cd ~/Desktop2/Projects/PeerView;
-	echo "Directoy entered.";
-	echo "Sourcing to project environment...";
-	source PeerViewEnv/bin/activate;
-	echo "Project environment entered.";
-	cd PeerView;
-	echo "Pulling from git...";
-	git pull;
-	echo "Pulled from git";
-	echo "Installing/Updating dependancies...";
-	./install_dep.sh;
-	echo "Dependancies installed/updated.";
-	cd PeerView;
-}
-
-
 # resource the .zshrc
 function resource() {
 	echo 'Setting new configurations...';
 	source ~/.zshrc;
-}
-
-# source to python2 settings
-function resource-py2() {
-	echo 'Switiching to py2';
-        alias py='Python2.7'
-        alias pip='pip2.7'
-        PS1='[%T](py2):%c$ '
 }
 
 function add_git_ignore() {
@@ -249,8 +204,7 @@ function matrix_display() {
 }
 
 function webfaction_server_ssh() {
-    ssh joeyuan19@web425.webfactional.com;
-
+        echo "add webserver address"
 }
 
 function sdl_compile() {
@@ -269,10 +223,6 @@ else
 fi
 echo "Restarting Finder...";
 killall Finder;
-}
-
-function pdiff() {
-    python3.4 ~/.zsh_resources/diff.py ${1} ${2}
 }
 
 # Quick fix for LC_ALL
